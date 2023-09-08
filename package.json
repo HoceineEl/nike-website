@@ -11,8 +11,6 @@
   "dependencies": {
     "@vueuse/motion": "^2.0.0",
     "animate.css": "^4.1.1",
-    "three": "^0.134.0",
-    "troisjs": "^0.3.4",
     "v-smooth-scroll": "^2.0.0-beta.2",
     "vue": "^3.3.4"
   },

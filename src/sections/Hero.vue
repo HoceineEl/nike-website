@@ -24,7 +24,7 @@ const changeHeroImg = (imgUrl) => {
       <h1
         class="text-8xl font-palanquin font-bold max-sm:text-6xl xl:whitespace-nowrap z-10"
       >
-        <span class="xl:bg-white">The New Arrival</span><br />
+        <span class="">The New Arrival</span><br />
         <span class="text-coral-red mt-3">Nike</span> Shoes
       </h1>
       <p class="text-lg text-slate-gray font-montserrat leading-8">
@@ -45,7 +45,7 @@ const changeHeroImg = (imgUrl) => {
       <!-- Use Vue's built-in transition for smooth image transitions -->
       <transition name="slide-fade" mode="out-in">
         <img
-          class="z-last object-contain"
+          class="z-last object-contain rotate-12 transition-all duration-1000"
           :key="bigImageUrl"
           :src="bigImageUrl"
           alt="Shoes collection"
@@ -78,21 +78,20 @@ const changeHeroImg = (imgUrl) => {
 <style lang="scss" scoped>
 .slide-fade-enter-active {
   transition: all 1s ease-out;
+}
+
+.slide-fade-leave-active {
+  transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
+  rotate: 12deg;
+}
+
+.slide-fade-enter-to {
   transform: translateX(0px);
   opacity: 1;
 }
 
-.slide-fade-leave-active {
-  transition: all 0.5s cubic-bezier(1, 0.5, 0.8, 1);
-}
-
-.slide-fade-enter-to {
-  transform: translateX(200px);
-  opacity: 0;
-}
-
 .slide-fade-leave-to {
-  transform: translateX(-200px);
+  transform: translateX(200px);
   opacity: 0;
 }
 </style>
