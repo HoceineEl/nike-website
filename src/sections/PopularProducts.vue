@@ -1,6 +1,21 @@
 <script setup>
 import { products } from "../constants";
 import ProductCard from "../components/PopularProductsCard.vue";
+import Swiper from "swiper";
+var swiper = new Swiper(".mySwiper", {
+  effect: "coverflow",
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 15,
+    stretch: 0,
+    depth: 300,
+    modifier: 1,
+    slideShadows: true,
+  },
+  loop: true,
+});
 </script>
 
 <template>
@@ -24,16 +39,34 @@ import ProductCard from "../components/PopularProductsCard.vue";
         opacity: 1,
         y: 0,
       }"
-      class="flex flex-wrap gap-10 mt-16 justify-center"
+      class="flex flex-wrap mt-16 justify-center gap-10"
     >
-      <ProductCard
-        v-for="product in products"
-        :key="product.label"
-        :product="product"
-        :width="'280'"
-      />
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide" v-for="product in products" :key="product.label">
+            <ProductCard class="product" :product="product" :width="'280'" />
+          </div>
+        </div>
+      </div>
     </div>
   </section>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.swiper {
+  width: 80%;
+  height: 100%;
+}
+
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+  width: 250px;
+}
+
+.swiper-slide .product {
+  display: block;
+  width: 100%;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0002, #0004);
+}
+</style>

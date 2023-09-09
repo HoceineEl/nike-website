@@ -18,11 +18,11 @@ const changeHeroImg = (imgUrl) => {
 <template>
   <section class="w-full min-h-screen flex flex-col xl:flex-row max-container">
     <div
-      class="relative xl:w-2/5 flex flex-col pt-28 flex-start justify-center items-start gap-8 lg:mb-28"
+      class="relative xl:w-2/5 flex flex-col pt-28 flex-start justify-center items-start gap-8 lg:mb-28 padding-l"
     >
       <p class="text-xl font-montserrat text-coral-red">Our Summer collections</p>
       <h1
-        class="text-8xl font-palanquin font-bold max-sm:text-6xl xl:whitespace-nowrap z-10"
+        class="text-8xl font-palanquin font-bold max-sm:text-4xl xl:whitespace-nowrap z-10"
       >
         <span class="">The New Arrival</span><br />
         <span class="text-coral-red mt-3">Nike</span> Shoes
@@ -32,15 +32,17 @@ const changeHeroImg = (imgUrl) => {
         comfort, and innovation for your active life.
       </p>
       <Button :iconUrl="arrowRight">Shop now</Button>
-      <div class="flex justify-start items-start gap-16 w-full mt-10">
+      <div class="flex justify-start flex-wrap items-start md:gap-16 gap-6 w-full mt-10">
         <div v-for="stat in statistics" :key="stat.label">
-          <span class="heading">{{ stat.value }}</span>
+          <span class="md:text-4xl font-bold font-palanquin text-3xl">{{
+            stat.value
+          }}</span>
           <p class="text-lg font-palanquin text-slate-gray">{{ stat.label }}</p>
         </div>
       </div>
     </div>
     <div
-      class="flex relative justify-center items-center flex-1 flex-col bg-hero min-h-screen bg-cover bg-primary bg-center"
+      class="flex relative justify-center items-center flex-1 flex-col bg-hero min-h-screen bg-cover bg-primary bg-center mt-10 xl:mt-0"
     >
       <!-- Use Vue's built-in transition for smooth image transitions -->
       <transition name="slide-fade" mode="out-in">
@@ -77,7 +79,7 @@ const changeHeroImg = (imgUrl) => {
 </template>
 <style lang="scss" scoped>
 .slide-fade-enter-active {
-  transition: all 1s ease-out;
+  transition: all 3s ease-out;
 }
 
 .slide-fade-leave-active {
@@ -91,7 +93,6 @@ const changeHeroImg = (imgUrl) => {
 }
 
 .slide-fade-leave-to {
-  transform: translateX(200px);
-  opacity: 0;
+  transform: translateX(400px);
 }
 </style>

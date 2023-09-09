@@ -1,13 +1,13 @@
 <template>
   <div
-    class="fixed bottom-7 right-7 border-2 border-coral-red bg-coral-red shadow-lg shadow-coral-red rounded-full cursor-pointer"
+    class="fixed bottom-7 right-7 z-[545454] border-2 border-coral-red bg-coral-red shadow-lg shadow-coral-red rounded-full cursor-pointer"
     @click="scrollToBottom"
     v-smooth-scroll
   >
     <img
       :src="arrowRight"
       :class="classRotate"
-      class="transition duration-1000"
+      class="transition duration-500"
       width="30"
       alt=""
     />
