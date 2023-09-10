@@ -11,7 +11,7 @@ const onClick = () => {
 
 <template>
   <div
-    class="bg-card px-5 py-10 bg-cover rounded-xl z-10 border-2"
+    class="bg-card px-5 py-10 bg-cover rounded-xl z-10 border-2 w-32 h-32"
     @click="onClick"
     :class="{ 'border-coral-red': isActive }"
   >

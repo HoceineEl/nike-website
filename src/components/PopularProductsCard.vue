@@ -6,12 +6,16 @@ const { product, width } = defineProps(["product", "width"]);
 
 <template>
   <div class="flex flex-col gap-3">
-    <img
-      class="z-10 object-contain mb-2"
-      :src="product.imgUrl"
-      alt="Shoes collection"
-      :width="width"
-    />
+    <div
+      class="bg-card min-w-lg min-h-52 px-5 py-10 bg-cover rounded-xl z-10 flex justify-center items-center"
+    >
+      <img
+        class="z-10 object-contain"
+        :src="product.imgUrl"
+        alt="Shoes collection"
+        :width="width"
+      />
+    </div>
     <div class="flex gap-2">
       <img src="../assets/icons/star.svg" alt="Star" />
       <p class="font-montserrat text-lg text-slate-gray">({{ product.rating }})</p>

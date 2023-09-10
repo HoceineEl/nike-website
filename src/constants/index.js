@@ -1,7 +1,15 @@
-import bigShoe1 from "../assets/images/shoe4.svg";
-import bigShoe2 from "../assets/images/shoe5.svg";
-import bigShoe3 from "../assets/images/shoe6.svg";
-import bigShoe4 from "../assets/images/shoe7.svg";
+import bigShoe1 from "../assets/images/big-shoe1.png";
+import bigShoe2 from "../assets/images/big-shoe2.png";
+import bigShoe3 from "../assets/images/big-shoe3.png";
+import bigShoe4 from "../assets/images/product12.png";
+import bigShoe5 from "../assets/images/product1.png";
+import bigShoe6 from "../assets/images/product2.png";
+import bigShoe7 from "../assets/images/product3.png";
+import bigShoe8 from "../assets/images/product5.png";
+import bigShoe9 from "../assets/images/product6.png";
+import bigShoe10 from "../assets/images/product8(1).png";
+import bigShoe11 from "../assets/images/1.png";
+import bigShoe12 from "../assets/images/hero.png";
 import { facebook, instagram, shieldTick as shieldTickIcon, support as supportIcon, truckFast as truckFastIcon, twitter } from "../assets/icons";
 import { customer1, customer2 } from "../assets/images";
 export const navLinks = [
@@ -16,10 +24,29 @@ export const statistics = [
     { value: "250+", label: "Shops" },
     { value: "250K+", label: "Customers" }
 ]
-
+export const shoesCards = [{ imgUrl: bigShoe9 },
+{ imgUrl: bigShoe10 },
+{ imgUrl: bigShoe11 },
+{ imgUrl: bigShoe12 },
+{ imgUrl: bigShoe5 },
+{ imgUrl: bigShoe6 },
+{ imgUrl: bigShoe7 },
+{ imgUrl: bigShoe8 },]
 export const products = [
-    { imgUrl: bigShoe1, label: "Nike Air Jordan-01", rating: "4.5", price: "200.20" },
-    { imgUrl: bigShoe2, label: "Nike Air Jordan-100", rating: "4", price: "210.20" }, { imgUrl: bigShoe3, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" }, { imgUrl: bigShoe4, label: "Nike Air Jordan-001", rating: "4.5", price: "250.20" }]
+    { imgUrl: bigShoe1, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe2, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe3, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe4, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe5, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe6, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe7, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe8, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe9, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe10, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+]
+
+
+
 export const offers = [
     { iconUrl: truckFastIcon, label: "Free shipping", desc: "Enjoy seamless shopping with our complimentary shipping service." },
     { iconUrl: shieldTickIcon, label: "Secure Payment", desc: "Experience worry-free transactions with our secure payment options." },

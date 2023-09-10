@@ -1,20 +1,13 @@
 <script setup>
 import { products } from "../constants";
 import ProductCard from "../components/PopularProductsCard.vue";
-import Swiper from "swiper";
-var swiper = new Swiper(".mySwiper", {
-  effect: "coverflow",
-  grabCursor: true,
-  centeredSlides: true,
-  slidesPerView: "auto",
-  coverflowEffect: {
-    rotate: 15,
-    stretch: 0,
-    depth: 300,
-    modifier: 1,
-    slideShadows: true,
-  },
-  loop: true,
+import { Swiper, SwiperSlide } from "swiper/vue";
+import { ref, watch } from "vue";
+import "swiper/css";
+const slidesPerViewVar = ref(4);
+window.addEventListener("resize", () => {
+  const width = window.innerWidth;
+  slidesPerViewVar.value = width >= 1440 ? 4 : width >= 1024 ? 3 : width >= 790 ? 2 : 1;
 });
 </script>
 
@@ -39,15 +32,17 @@ var swiper = new Swiper(".mySwiper", {
         opacity: 1,
         y: 0,
       }"
-      class="flex flex-wrap mt-16 justify-center gap-10"
+      class="mt-10"
     >
-      <div class="swiper mySwiper">
-        <div class="swiper-wrapper">
-          <div class="swiper-slide" v-for="product in products" :key="product.label">
-            <ProductCard class="product" :product="product" :width="'280'" />
-          </div>
-        </div>
-      </div>
+      <Swiper
+        :slides-per-view="slidesPerViewVar"
+        :space-between="100"
+        :loop="true"
+        class="default-slider"
+      >
+        ><SwiperSlide v-for="product in products">
+          <ProductCard class="product" :product="product" :width="'280'" /> </SwiperSlide
+      ></Swiper>
     </div>
   </section>
 </template>
@@ -56,15 +51,16 @@ var swiper = new Swiper(".mySwiper", {
 .swiper {
   width: 80%;
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .swiper-slide {
   background-position: center;
   background-size: cover;
-  width: 250px;
 }
 
-.swiper-slide .product {
+.swiper-slide img {
   display: block;
   width: 100%;
   -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0002, #0004);

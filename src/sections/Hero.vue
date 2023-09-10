@@ -1,14 +1,15 @@
 <script setup>
 import Button from "../components/Button.vue";
 import arrowRight from "../assets/icons/arrow-right.svg";
-import { statistics } from "../constants/index";
-import BigShoeImage from "../assets/images/big-shoe1.png";
-import bigShoe2 from "../assets/images/big-shoe2.png";
-import bigShoe3 from "../assets/images/big-shoe3.png";
-// import "animate.css";
-import Card from "../components/Card.vue";
+import { statistics, shoesCards } from "../constants/index";
+import { Swiper, SwiperSlide } from "swiper/vue";
 import { ref } from "vue";
-const bigImageUrl = ref(BigShoeImage);
+import "swiper/css";
+import { Pagination } from "swiper/modules";
+import "swiper/css/pagination";
+
+import Card from "../components/Card.vue";
+const bigImageUrl = ref(shoesCards[0].imgUrl);
 
 const changeHeroImg = (imgUrl) => {
   bigImageUrl.value = imgUrl;
@@ -42,57 +43,73 @@ const changeHeroImg = (imgUrl) => {
       </div>
     </div>
     <div
-      class="flex relative justify-center items-center flex-1 flex-col bg-hero min-h-screen bg-cover bg-primary bg-center mt-10 xl:mt-0"
+      class="flex relative justify-center items-center flex-1 flex-col bg-hero min-h-screen bg-cover bg-primary bg-center mt-10 xl:mt-0 lg:overflow-x-hidden lg:overflow-y-hidden"
     >
       <!-- Use Vue's built-in transition for smooth image transitions -->
-      <transition name="slide-fade" mode="out-in">
+      <transition name="fade" mode="out-in">
         <img
-          class="z-last object-contain rotate-12 transition-all duration-1000"
+          class="z-40 object-contain rotate-12 transition-all duration-1000"
           :key="bigImageUrl"
           :src="bigImageUrl"
           alt="Shoes collection"
           width="600"
         />
       </transition>
-      <div class="flex absolute -bottom-16 gap-10">
-        <Card
-          :imgUrl="BigShoeImage"
-          :width="'140'"
-          :isActive="bigImageUrl == BigShoeImage"
-          @change-hero-img="changeHeroImg"
-        />
-        <Card
-          :imgUrl="bigShoe2"
-          :width="'140'"
-          :isActive="bigImageUrl == bigShoe2"
-          @change-hero-img="changeHeroImg"
-        />
-        <Card
-          :imgUrl="bigShoe3"
-          :width="'140'"
-          :isActive="bigImageUrl == bigShoe3"
-          @change-hero-img="changeHeroImg"
-        />
+      <div class="w-full absolute bottom-0">
+        <Swiper
+          :slides-per-view="2"
+          :space-between="10"
+          :pagination="{
+            clickable: true,
+          }"
+          :breakpoints="{
+            '560': {
+              slidesPerView: 3,
+              spaceBetween: 20,
+            },
+
+            '768': {
+              slidesPerView: 4,
+              spaceBetween: 40,
+            },
+            '1024': {
+              slidesPerView: 5,
+              spaceBetween: 50,
+            },
+          }"
+          :loop="true"
+        >
+          ><SwiperSlide v-for="shoe in shoesCards" :key="shoe.imgUrl">
+            <Card
+              :key="shoe.imgUrl"
+              :imgUrl="shoe.imgUrl"
+              :width="'140'"
+              :isActive="bigImageUrl == shoe.imgUrl"
+              @change-hero-img="changeHeroImg"
+            /> </SwiperSlide
+        ></Swiper>
       </div>
     </div>
   </section>
 </template>
 <style lang="scss" scoped>
-.slide-fade-enter-active {
-  transition: all 3s ease-out;
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 1s ease;
+  rotate: 20deg;
 }
 
-.slide-fade-leave-active {
-  transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
-  rotate: 12deg;
+.fade-enter-from,
+.fade-leave-to {
+  transform: translateX(800px);
+}
+.swiper {
+  width: 90%;
+  height: 100%;
 }
 
-.slide-fade-enter-to {
-  transform: translateX(0px);
-  opacity: 1;
-}
-
-.slide-fade-leave-to {
-  transform: translateX(400px);
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
 }
 </style>
