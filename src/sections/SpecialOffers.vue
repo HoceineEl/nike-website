@@ -72,17 +72,11 @@ import { Keyboard, Pagination, Navigation, EffectCards } from "swiper/modules";
 
 <style lang="scss" scoped>
 .swiper {
-  width: 240px;
-  height: 320px;
+  width: 300px;
+  height: 400px;
 }
 
 .swiper-slide {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 18px;
-  font-size: 22px;
-  font-weight: bold;
-  color: #fff;
+  width: 500px;
 }
 </style>

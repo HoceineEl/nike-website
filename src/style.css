@@ -69,3 +69,7 @@
     @apply font-montserrat text-slate-gray text-lg leading-7;
   }
 }
+
+.swiper-pagination-bullet-active{
+  background-color: #FF6452 !important;
+}

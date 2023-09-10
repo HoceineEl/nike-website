@@ -24,25 +24,28 @@ export const statistics = [
     { value: "250+", label: "Shops" },
     { value: "250K+", label: "Customers" }
 ]
-export const shoesCards = [{ imgUrl: bigShoe9 },
-{ imgUrl: bigShoe10 },
-{ imgUrl: bigShoe11 },
-{ imgUrl: bigShoe12 },
-{ imgUrl: bigShoe5 },
-{ imgUrl: bigShoe6 },
-{ imgUrl: bigShoe7 },
-{ imgUrl: bigShoe8 },]
+export const shoesCards = [
+    { imgUrl: bigShoe5 },
+    { imgUrl: bigShoe6 },
+    { imgUrl: bigShoe7 },
+    { imgUrl: bigShoe8 },
+    { imgUrl: bigShoe9 },
+    { imgUrl: bigShoe10 },
+    { imgUrl: bigShoe11 },
+    { imgUrl: bigShoe12 },
+]
 export const products = [
-    { imgUrl: bigShoe1, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
-    { imgUrl: bigShoe2, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
-    { imgUrl: bigShoe3, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
-    { imgUrl: bigShoe4, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
-    { imgUrl: bigShoe5, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
     { imgUrl: bigShoe6, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
     { imgUrl: bigShoe7, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
     { imgUrl: bigShoe8, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
     { imgUrl: bigShoe9, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
     { imgUrl: bigShoe10, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe1, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe2, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe3, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe4, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+    { imgUrl: bigShoe5, label: "Nike Air Jordan-10", rating: "4.7", price: "230.20" },
+
 ]
 
 
@@ -54,7 +57,7 @@ export const offers = [
 ]
 export const customers = [
     { profileImg: customer1, name: "Morich Brown", rating: '4.5', comment: "The attention to detail and the quality of the product exceeded my expectations. Highly recommended!" },
-    { profileImg: customer2, name: "Lota Mongeskar", rating: '4.8', comment: "The product not only met but exceeded my expectations. I'll definitely be a returning customer!" },
+    { profileImg: customer2, name: "Mohammed El idrissi", rating: '4.8', comment: "The product not only met but exceeded my expectations. I'll definitely be a returning customer!" },
 ]
 export const socialMedia = [
     { src: facebook, alt: "facebook logo" },
