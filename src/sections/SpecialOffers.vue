@@ -2,6 +2,13 @@
 import { offer } from "../assets/images";
 import Button from "../components/Button.vue";
 import { arrowRight } from "../assets/icons";
+import { shoesCards } from "../constants/index";
+import { Swiper, SwiperSlide } from "swiper/vue";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import "swiper/css/effect-cards";
+import { Keyboard, Pagination, Navigation, EffectCards } from "swiper/modules";
 </script>
 <template>
   <div
@@ -16,14 +23,27 @@ import { arrowRight } from "../assets/icons";
       y: 0,
     }"
   >
-    <div class="flex max-xl:flex-col-reverse gap-10 items-center">
+    <div class="flex max-xl:flex-col-reverse lg:gap-10 items-center">
       <div class="flex-1">
-        <img
-          :src="offer"
-          alt="offer Image "
-          class="object-fill hover:rotate-12 transition duration-1000"
-          width="1500"
-        />
+        <swiper
+          :effect="'cards'"
+          :grabCursor="true"
+          :modules="[Keyboard, Pagination, Navigation, EffectCards]"
+          class="mySwiper"
+          :loop="true"
+          :keyboard="{
+            enabled: true,
+          }"
+          :pagination="{
+            clickable: true,
+          }"
+        >
+          <swiper-slide v-for="shoe in shoesCards" :key="shoe">
+            <div class="bg-card bg-cover w-full h-full flex justify-center items-center">
+              <img :src="shoe.imgUrl" alt="Shoe image" class="mx-10" />
+            </div>
+          </swiper-slide>
+        </swiper>
       </div>
       <div class="space-y-12 max-w-lg">
         <h2 class="heading"><span class="text-coral-red">Special </span>Offer</h2>
@@ -50,4 +70,19 @@ import { arrowRight } from "../assets/icons";
   </div>
 </template>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.swiper {
+  width: 240px;
+  height: 320px;
+}
+
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+}
+</style>

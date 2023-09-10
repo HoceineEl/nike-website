@@ -28,10 +28,15 @@
     @apply text-base leading-normal text-slate-gray pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-slate-gray sm:flex-1 max-sm:w-full max-sm:rounded-full;
   }
 }
-
+  .swiper-pagination-bullet-active {
+    background-color: #FF6452;
+  }
 @layer utilities {
   .padding {
     @apply sm:px-16 px-8 sm:py-24 py-12;
+  }
+  .swiper-pagination-bullet{
+    @apply mt-7;
   }
 
   .padding-x {

@@ -2,6 +2,7 @@
 import Button from "../components/Button.vue";
 import { arrowRight } from "../assets/icons";
 import Image from "../assets/images/shoe8.svg";
+
 </script>
 <template>
   <section

@@ -4,6 +4,8 @@ import ProductCard from "../components/PopularProductsCard.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { ref, watch } from "vue";
 import "swiper/css";
+import "swiper/css/pagination";
+import { Keyboard } from "swiper/modules";
 const slidesPerViewVar = ref(4);
 window.addEventListener("resize", () => {
   const width = window.innerWidth;
@@ -39,6 +41,10 @@ window.addEventListener("resize", () => {
         :space-between="100"
         :loop="true"
         class="default-slider"
+        :keyboard="{
+          enabled: true,
+        }"
+        :modules="[Keyboard]"
       >
         ><SwiperSlide v-for="product in products">
           <ProductCard class="product" :product="product" :width="'280'" /> </SwiperSlide
@@ -58,11 +64,5 @@ window.addEventListener("resize", () => {
 .swiper-slide {
   background-position: center;
   background-size: cover;
-}
-
-.swiper-slide img {
-  display: block;
-  width: 100%;
-  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0002, #0004);
 }
 </style>

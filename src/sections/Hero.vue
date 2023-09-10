@@ -5,7 +5,7 @@ import { statistics, shoesCards } from "../constants/index";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { ref } from "vue";
 import "swiper/css";
-import { Pagination } from "swiper/modules";
+import { Pagination, Keyboard } from "swiper/modules";
 import "swiper/css/pagination";
 
 import Card from "../components/Card.vue";
@@ -55,12 +55,13 @@ const changeHeroImg = (imgUrl) => {
           width="600"
         />
       </transition>
-      <div class="w-full absolute bottom-0">
+      <div class="w-full absolute bottom-3">
         <Swiper
           :slides-per-view="2"
           :space-between="10"
           :pagination="{
             clickable: true,
+            type: 'bullets',
           }"
           :breakpoints="{
             '560': {
@@ -78,6 +79,8 @@ const changeHeroImg = (imgUrl) => {
             },
           }"
           :loop="true"
+          :keyboard="true"
+          :modules="[Pagination, Keyboard]"
         >
           ><SwiperSlide v-for="shoe in shoesCards" :key="shoe.imgUrl">
             <Card
@@ -111,5 +114,13 @@ const changeHeroImg = (imgUrl) => {
 .swiper-slide {
   background-position: center;
   background-size: cover;
+}
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: #fff;
+}
+body {
+  --swiper-pagination-color: #ff6452;
 }
 </style>
