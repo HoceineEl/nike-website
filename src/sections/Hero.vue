@@ -59,10 +59,6 @@ const changeHeroImg = (imgUrl) => {
         <Swiper
           :slides-per-view="2"
           :space-between="10"
-          :pagination="{
-            clickable: true,
-            type: 'bullets',
-          }"
           :breakpoints="{
             '560': {
               slidesPerView: 3,
@@ -80,7 +76,7 @@ const changeHeroImg = (imgUrl) => {
           }"
           :loop="true"
           :keyboard="true"
-          :modules="[Pagination, Keyboard]"
+          :modules="[Keyboard]"
         >
           ><SwiperSlide v-for="shoe in shoesCards" :key="shoe.imgUrl">
             <Card
