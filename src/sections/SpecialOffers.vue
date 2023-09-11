@@ -24,7 +24,7 @@ import { Keyboard, Pagination, EffectCards } from "swiper/modules";
     }"
   >
     <div class="flex max-xl:flex-col-reverse lg:gap-10 items-center">
-      <div class="flex-1">
+      <div class="flex-1 mt-10 lg:mt-0">
         <swiper
           :effect="'cards'"
           :grabCursor="true"
