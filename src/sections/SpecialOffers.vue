@@ -79,6 +79,12 @@ import { Keyboard, Pagination, EffectCards } from "swiper/modules";
 }
 
 .swiper-slide {
-  width: 500px;
+  max-width: 500px;
+}
+@media (width<=670px) {
+  .swiper {
+    width: 200px;
+    height: 300px;
+  }
 }
 </style>

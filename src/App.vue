@@ -16,10 +16,7 @@ import ScrollToggler from "./components/ScrollToggler.vue";
 <template>
   <main class="relative">
     <Nav />
-    <section
-      id="home"
-      class="xl:padding-l wide:padding-r padding-b max-container overflow-hidden"
-    >
+    <section id="home" class="xl:padding-l wide:padding-r padding-b overflow-hidden">
       <Hero />
     </section>
     <section id="products" class="padding">
