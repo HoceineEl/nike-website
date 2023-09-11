@@ -37,11 +37,12 @@ import { Keyboard, Pagination, EffectCards } from "swiper/modules";
           :pagination="{
             clickable: true,
           }"
-          
         >
           <swiper-slide v-for="shoe in shoesCards" :key="shoe">
-            <div class="bg-card bg-cover w-full h-full flex justify-center items-center">
-              <img :src="shoe.imgUrl" alt="Shoe image" class="mx-10" />
+            <div
+              class="w-full h-full bg-gradient-to-r from-[#F5F6FF] to-coral-red flex rounded-xl justify-center items-center"
+            >
+              <img :src="shoe.imgUrl" alt="Shoe image" class="px-3" />
             </div>
           </swiper-slide>
         </swiper>
