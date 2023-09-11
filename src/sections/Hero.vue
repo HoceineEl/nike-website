@@ -5,9 +5,7 @@ import { statistics, shoesCards } from "../constants/index";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { ref } from "vue";
 import "swiper/css";
-import { Pagination, Keyboard } from "swiper/modules";
-import "swiper/css/pagination";
-
+import { Keyboard } from "swiper/modules";
 import Card from "../components/Card.vue";
 const bigImageUrl = ref(shoesCards[0].imgUrl);
 
@@ -110,13 +108,5 @@ const changeHeroImg = (imgUrl) => {
 .swiper-slide {
   background-position: center;
   background-size: cover;
-}
-.swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  background-color: #fff;
-}
-body {
-  --swiper-pagination-color: #ff6452;
 }
 </style>

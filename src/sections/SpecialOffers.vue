@@ -6,9 +6,9 @@ import { shoesCards } from "../constants/index";
 import { Swiper, SwiperSlide } from "swiper/vue";
 import "swiper/css";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
+
 import "swiper/css/effect-cards";
-import { Keyboard, Pagination, Navigation, EffectCards } from "swiper/modules";
+import { Keyboard, Pagination, EffectCards } from "swiper/modules";
 </script>
 <template>
   <div
@@ -28,8 +28,8 @@ import { Keyboard, Pagination, Navigation, EffectCards } from "swiper/modules";
         <swiper
           :effect="'cards'"
           :grabCursor="true"
-          :modules="[Keyboard, Pagination, Navigation, EffectCards]"
-          class="mySwiper"
+          :modules="[Keyboard, Pagination, EffectCards]"
+          class="offer"
           :loop="true"
           :keyboard="{
             enabled: true,
@@ -37,6 +37,7 @@ import { Keyboard, Pagination, Navigation, EffectCards } from "swiper/modules";
           :pagination="{
             clickable: true,
           }"
+          
         >
           <swiper-slide v-for="shoe in shoesCards" :key="shoe">
             <div class="bg-card bg-cover w-full h-full flex justify-center items-center">

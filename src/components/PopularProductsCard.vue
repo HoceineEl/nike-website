@@ -1,5 +1,5 @@
 <script setup>
-import { defineProps, defineEmits } from "vue";
+import { defineProps } from "vue";
 
 const { product, width } = defineProps(["product", "width"]);
 </script>
@@ -7,10 +7,10 @@ const { product, width } = defineProps(["product", "width"]);
 <template>
   <div class="flex flex-col gap-3">
     <div
-      class="bg-card min-w-lg min-h-52 px-5 py-10 bg-cover rounded-xl z-10 flex justify-center items-center"
+      class="bg-card min-w-lg h-40 px-5 py-10 bg-cover rounded-xl z-10 flex justify-center group items-center"
     >
       <img
-        class="z-10 object-contain"
+        class="z-10 object-contain group-hover:rotate-12 transition-all duration-500"
         :src="product.imgUrl"
         alt="Shoes collection"
         :width="width"

@@ -2,9 +2,8 @@
 import { products } from "../constants";
 import ProductCard from "../components/PopularProductsCard.vue";
 import { Swiper, SwiperSlide } from "swiper/vue";
-import { ref, watch } from "vue";
+import { ref } from "vue";
 import "swiper/css";
-import "swiper/css/pagination";
 import { Keyboard } from "swiper/modules";
 const slidesPerViewVar = ref(4);
 window.addEventListener("resize", () => {
