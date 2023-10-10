@@ -10,7 +10,7 @@ const { product, width } = defineProps(["product", "width"]);
       class="bg-card min-w-lg h-40 px-5 py-10 bg-cover rounded-xl z-10 flex justify-center group items-center"
     >
       <img
-        class="z-10 object-contain group-hover:rotate-12 transition-all duration-1000"
+        class="z-50 object-contain group-hover:rotate-12 transition-all duration-1000"
         :src="product.imgUrl"
         alt="Shoes collection"
         :width="width"

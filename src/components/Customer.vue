@@ -5,12 +5,7 @@ let { customer } = defineProps(["customer"]);
 </script>
 <template>
   <div class="flex flex-col items-center gap-5">
-    <img
-      class="rounded-full"
-      :src="customer.profileImg"
-      width="120"
-      :alt="customer.name"
-    />
+    <img class="rounded-full w-20 h-20" :src="customer.profileImg" :alt="customer.name" />
     <p class="description text-center max-w-sm">{{ customer.comment }}</p>
     <div class="flex gap-2">
       <img :src="star" alt="star" />

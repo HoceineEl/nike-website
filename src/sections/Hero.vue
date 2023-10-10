@@ -41,7 +41,7 @@ const changeHeroImg = (imgUrl) => {
       </div>
     </div>
     <div
-      class="flex relative justify-center items-center flex-1 flex-col bg-hero min-h-screen bg-cover bg-primary bg-center mt-10 xl:mt-0 lg:overflow-x-hidden lg:overflow-y-hidden"
+      class="flex relative justify-center items-center flex-1 flex-col bg-hero min-h-screen bg-cover bg-primary bg-center mt-10 xl:mt-0 lg:overflow-x-hidden lg:overflow-y-hidden p-8 sm:p-0"
     >
       <!-- Use Vue's built-in transition for smooth image transitions -->
       <transition name="fade" mode="out-in">

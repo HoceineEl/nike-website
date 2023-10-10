@@ -8,7 +8,7 @@ import { Keyboard } from "swiper/modules";
 const slidesPerViewVar = ref(4);
 window.addEventListener("resize", () => {
   const width = window.innerWidth;
-  slidesPerViewVar.value = width >= 1440 ? 4 : width >= 1024 ? 3 : width >= 790 ? 2 : 1;
+  slidesPerViewVar.value = width >= 1440 ? 4 : width >= 1024 ? 3 : width >= 500 ? 2 : 1;
 });
 </script>
 
